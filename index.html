@@ -76,6 +76,14 @@
   .rule b{color:var(--tx)}
 
   .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .dgrid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .dgrid3 .stat{padding:11px 11px}
+  .dgrid3 .lbl{letter-spacing:.05em;line-height:1.25}
+  .stat-onl{border-color:var(--acc-line);background:linear-gradient(160deg,rgba(255,255,255,.10),var(--card) 70%)}
+  .stat-onl .lbl{color:var(--acc)}
+  .live{flex:none;width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 0 rgba(255,255,255,.6);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55)}70%{box-shadow:0 0 0 7px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+  @media (max-width:420px){.dgrid3 .stat .v{font-size:20px}.dgrid3 .s{font-size:10.5px}}
   .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;text-align:left;min-width:0}
   button.stat{transition:border-color .12s,background .12s}
   button.stat:hover{border-color:var(--line2)}
@@ -134,6 +142,7 @@
   .ccard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
   .ccard.pos{border-left:3px solid var(--ok)}
   .ccard.npos{border-left:3px solid var(--line2)}
+  .ccard.onlc{border-left:3px solid var(--acc)}
   .ccard summary{list-style:none;cursor:pointer;padding:12px 14px}
   .ccard summary::-webkit-details-marker{display:none}
   .crow{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
@@ -166,7 +175,7 @@
   .more{width:100%;margin-top:8px;padding:11px;border-radius:12px;background:transparent;border:1px dashed var(--line2);color:var(--tx2);font-weight:600;font-size:13px}
   .foot{margin-top:24px;font-size:11px;color:var(--tx3);line-height:1.6;border-top:1px solid var(--line);padding-top:12px}
   @media (max-width:380px){.filters select{font-size:12px;padding-left:8px}.inc .big{font-size:26px}}
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -319,8 +328,8 @@ function groupClients(ts){
   return arr;
 }
 const SIT = {
-  pos:{l:"Positivados",f:c=>c.pos},
-  onl:{l:"Online hoje",f:c=>c.tasks.some(t=>t.onl&&!t.real)},
+  pos:{l:"Positivados",f:c=>c.tasks.some(t=>t.real)},
+  onl:{l:"Positivados online",f:c=>c.pos&&!c.tasks.some(t=>t.real)},
   npos:{l:"Não positivados",f:c=>!c.pos}
 };
 function taskHTML(t){
@@ -335,10 +344,10 @@ function clientCard(c,showRoute){
   const tags=[];
   tags.push(c.dia?`<span class="chip c-mut">Visita: ${esc(c.dia)}</span>`:'<span class="chip c-mut">Sem dia de visita</span>');
   const soOnl=c.pos&&!c.tasks.some(t=>t.real);
-  tags.push(c.pos?(soOnl?'<span class="chip c-onl">● Positivado · online</span>':'<span class="chip c-ok">✓ Positivado</span>'):'<span class="chip c-red">Não positivado</span>');
+  tags.push(c.pos?(soOnl?'<span class="chip c-onl"><span class="live" style="display:inline-block;width:7px;height:7px;margin-right:5px;vertical-align:0"></span>Positivado online</span>':'<span class="chip c-ok">✓ Positivado</span>'):'<span class="chip c-red">Não positivado</span>');
   if(c.tasks.length>1)tags.push(`<span class="chip c-mut">2 missões</span>`);
   const mini=c.tasks.map(t=>`<div><i style="background:${t.real?'var(--ok)':(t.onl?'#fff':(t.tipo==0?'var(--warn)':'var(--blue)'))}"></i><span><b style="color:var(--tx);font-weight:600">${t.tipo==0?"Traga de Volta":"Aumente a Família"}:</b> ${esc(t.prod)}${t.real?" ✓ realizado":(t.onl?" ● online":"")}</span></div>`).join("");
-  return `<details class="ccard ${c.pos?'pos':'npos'}"><summary><div class="crow"><div><div class="cname">${esc(c.nome)}</div><div class="muted">${esc(c.cod)} · ${esc(c.seg)}${showRoute?" · Rota "+esc(c.rt):""}</div></div>${CHEV}</div><div class="ctags">${tags.join("")}</div><div class="cmini">${mini}</div></summary><div class="cbody">${c.tasks.map(taskHTML).join("")}</div></details>`;
+  return `<details class="ccard ${c.pos?(soOnl?'onlc':'pos'):'npos'}"><summary><div class="crow"><div><div class="cname">${esc(c.nome)}</div><div class="muted">${esc(c.cod)} · ${esc(c.seg)}${showRoute?" · Rota "+esc(c.rt):""}</div></div>${CHEV}</div><div class="ctags">${tags.join("")}</div><div class="cmini">${mini}</div></summary><div class="cbody">${c.tasks.map(taskHTML).join("")}</div></details>`;
 }
 function exportCSV(cl){
   const cols=["Gerência","Supervisor","Rota","Dia de visita","Cód. cliente","Cliente","Segmento","Positivado","Missão","Pilar / Família","Cód. produto","Produto","Status","Nível","Por quê","Argumento para o cliente"];
@@ -398,9 +407,14 @@ function render(){
   // positivação
   const ad=agg(geoDia);
   const lblDia=st.dias.length?" · "+st.dias.join(", "):"";
-  el("pos").innerHTML=`<div class="sechead">Clientes com missão${esc(lblDia)} · toque para filtrar</div><div class="dgrid">
-    <button class="stat${st.sit=='pos'?' on':''}" data-sit="pos"><div class="lbl">Positivados</div><div class="v v-ok">${nf(ad.pos)}<span>/${nf(ad.cli)}</span></div><div class="s">${ad.cli?Math.round(ad.pos/ad.cli*100):0}% concluíram${(()=>{const n=new Set(geoDia.filter(t=>t.onl&&!t.real).map(t=>t.cod)).size;return n?" · "+n+" online hoje":"";})()}</div></button>
-    <button class="stat${st.sit=='npos'?' on':''}" data-sit="npos"><div class="lbl">Não positivados</div><div class="v v-red">${nf(ad.cli-ad.pos)}</div><div class="s">ainda não concluíram a missão</div></button></div>`;
+  {
+  const cm=new Map();geoDia.forEach(t=>{const c=cm.get(t.cod)||{r:false,o:false};if(t.real)c.r=true;else if(t.onl)c.o=true;cm.set(t.cod,c);});
+  let nR=0,nO=0;cm.forEach(c=>{if(c.r)nR++;else if(c.o)nO++;});const nN=cm.size-nR-nO;const pc=n=>cm.size?Math.round(n/cm.size*100):0;
+  el("pos").innerHTML=`<div class="sechead">Clientes com missão${esc(lblDia)} · ${nf(cm.size)} · toque para filtrar</div><div class="dgrid3">
+    <button class="stat${st.sit=='pos'?' on':''}" data-sit="pos"><div class="lbl row" style="gap:5px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>Positivados</div><div class="v v-ok">${nf(nR)}</div><div class="s">${pc(nR)}% · realizado até ontem</div></button>
+    <button class="stat stat-onl${st.sit=='onl'?' on':''}" data-sit="onl"><div class="lbl row" style="gap:6px"><span class="live"></span>Positivados online</div><div class="v">${nf(nO)}</div><div class="s">${pc(nO)}% · pedido online hoje</div></button>
+    <button class="stat${st.sit=='npos'?' on':''}" data-sit="npos"><div class="lbl">Não positivados</div><div class="v v-red">${nf(nN)}</div><div class="s">${pc(nN)}% · sem missão concluída</div></button></div>`;
+  }
 
   // missões
   const fcount={};geoDia.filter(t=>t.tipo==1).forEach(t=>fcount[t.fam]=(fcount[t.fam]||0)+1);

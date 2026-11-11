@@ -173,7 +173,6 @@
 <div class="stickybar">
   <div class="top"><div class="in row between">
     <div style="min-width:0"><div class="brand">Bandeirantes · Missões Guiadas</div><h1>Oportunidades <em>Missões no App</em></h1><div class="sub" id="status">carregando…</div></div>
-    <button class="btn-ghost row" id="refresh" style="gap:6px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>Atualizar</button>
   </div></div>
   <div class="filterbar"><div class="in">
     <div class="filters"><select id="fgc" aria-label="Gerência"></select><select id="fsv" aria-label="Supervisor"></select><select id="frt" aria-label="Rota"></select></div>
@@ -468,7 +467,6 @@ function bindCrumb(){
 el("fgc").onchange=e=>{st.gc=e.target.value||null;st.sv=st.rt=null;st.lista=false;st.lim=40;render();};
 el("fsv").onchange=e=>{st.sv=e.target.value||null;st.rt=null;st.lista=false;st.lim=40;render();};
 el("frt").onchange=e=>{st.rt=e.target.value||null;st.lista=false;st.lim=40;render();};
-el("refresh").onclick=load;
 let qt;el("search").oninput=()=>{clearTimeout(qt);qt=setTimeout(render,180);};
 load();
 </script>

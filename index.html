@@ -413,7 +413,7 @@ function render(){
   el("pos").innerHTML=`<div class="sechead">Clientes com missão${esc(lblDia)} · ${nf(cm.size)} · toque para filtrar</div><div class="dgrid3">
     <button class="stat${st.sit=='pos'?' on':''}" data-sit="pos"><div class="lbl row" style="gap:5px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>Positivados</div><div class="v v-ok">${nf(nR)}</div><div class="s">${pc(nR)}% · realizado até ontem</div></button>
     <button class="stat stat-onl${st.sit=='onl'?' on':''}" data-sit="onl"><div class="lbl row" style="gap:6px"><span class="live"></span>Positivados online</div><div class="v">${nf(nO)}</div><div class="s">${pc(nO)}% · pedido online hoje</div></button>
-    <button class="stat${st.sit=='npos'?' on':''}" data-sit="npos"><div class="lbl">Não positivados</div><div class="v v-red">${nf(nN)}</div><div class="s">${pc(nN)}% · sem missão concluída</div></button></div>`;
+    <button class="stat${st.sit=='npos'?' on':''}" data-sit="npos"><div class="lbl">Não positivados</div><div class="v ${falta?'v-red':'v-ok'}">${nf(falta)}</div><div class="s">${falta?(st.rt?"faltam para a meta de "+CONFIG.META:"faltam para a meta de "+CONFIG.META+" por rota"):"meta batida"}</div></button></div>`;
   }
 
   // missões

@@ -116,6 +116,21 @@
   .tbar>span{display:block;height:100%;border-radius:3px}
   .chev{color:var(--tx3);width:15px;height:15px;flex:none}
 
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+  table.cons{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+  .cons th{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--tx3);font-weight:700;text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+  .cons td{padding:10px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+  .cons tbody tr{cursor:pointer;transition:background .12s}
+  .cons tbody tr:hover,.cons tbody tr:focus-visible{background:var(--card2);outline:none}
+  .cons .num{text-align:right}
+  .cons .rk{color:var(--tx3);width:30px;padding-left:12px}
+  .cons .nm{font-weight:700;white-space:normal;overflow-wrap:anywhere;min-width:70px}
+  .cons .go{width:22px;padding-right:10px}
+  .cons .pc{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-weight:800}
+  .cons .pc i{display:block;width:64px;height:4px;border-radius:2px;background:var(--bg);overflow:hidden}
+  .cons .pc i b{display:block;height:100%}
+  .cons tfoot td{border-bottom:none;border-top:1px solid var(--line2);font-weight:800;background:var(--card2)}
+  @media (max-width:420px){.cons th,.cons td{padding:9px 5px}.cons .rk{padding-left:9px;width:24px}.cons .pc i{width:48px}.cons th{font-size:9.5px}}
   .help{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:14px;overflow:hidden}
   .help summary{list-style:none;cursor:pointer;padding:12px 14px;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:space-between}
   .help summary::-webkit-details-marker{display:none}
@@ -442,12 +457,15 @@ function render(){
   if(lvl&&!showList){
     const key=lvl;
     const groups={};geo.forEach(t=>{(groups[t[key]]=groups[t[key]]||[]).push(t);});
-    const rows=Object.entries(groups).map(([k,v])=>[k,agg(v)]).map(([k,g])=>[k,g,g.meta?Math.round((lvl=="rt"?g.done:g.doneCap)/g.meta*100):0]).sort((x,y)=>(x[2]-y[2])||natural(x[0],y[0]));
-    const title=lvl=="gc"?"Gerências":(lvl=="sv"?"Supervisores de "+st.gc:"Rotas de "+st.sv);
-    h+=`<div class="sechead">${esc(title)} · menor atingimento primeiro</div>`;
-    h+=rows.map(([k,g,p])=>`<button class="navcard" data-nav="${esc(k)}"><div class="row between"><div class="t">${lvl=="rt"?"Rota ":""}${esc(k)}</div><div class="row" style="gap:6px"><span class="pct" style="color:${pctColor(p)}">${p}%</span>${CHEV}</div></div>
-      <div class="m"><span><b>${nf(lvl=="rt"?g.done:g.doneCap)}</b>/${nf(g.meta)} meta</span>${lvl!="rt"?`<span><b>${g.bateu}</b>/${g.rotas} consultores na meta</span>`:`<span><b>${g.done}</b>/${g.n} tarefas</span>`}<span><b>${nf(g.pos)}</b>/${nf(g.cli)} positivados</span></div>
-      <div class="tbar"><span style="width:${Math.min(100,p)}%;background:${pctColor(p)}"></span></div></button>`).join("");
+    const rows=Object.entries(groups).map(([k,v])=>{const g=agg(v);const real=lvl=="rt"?g.done:g.doneCap;return {k,meta:g.meta,real,p:g.meta?real/g.meta*100:0};})
+      .sort((x,y)=>(y.p-x.p)||(y.real-x.real)||natural(x.k,y.k));
+    const nome=lvl=="gc"?"Gerência":(lvl=="sv"?"Supervisor":"Rota");
+    const title=lvl=="gc"?"Consolidado por gerência":(lvl=="sv"?"Consolidado por supervisor · "+st.gc:"Consolidado por rota · "+st.sv);
+    const totReal=st.rt?all.done:all.doneCap, totP=all.meta?totReal/all.meta*100:0;
+    const cell=(p)=>{const r=Math.round(p);return `<td class="num"><div class="pc"><span style="color:${pctColor(r)}">${r}%</span><i><b style="width:${Math.min(100,p)}%;background:${pctColor(r)}"></b></i></div></td>`;};
+    h+=`<div class="sechead">${esc(title)} · do melhor para o pior</div><div class="tblwrap"><table class="cons"><thead><tr><th class="rk">#</th><th>${nome}</th><th class="num">Meta</th><th class="num">Real</th><th class="num">% Real × Meta</th><th class="go"></th></tr></thead><tbody>`+
+      rows.map((r,i)=>`<tr data-nav="${esc(r.k)}" tabindex="0"><td class="rk">${i+1}º</td><td class="nm">${esc(r.k)}</td><td class="num">${nf(r.meta)}</td><td class="num"><b>${nf(r.real)}</b></td>${cell(r.p)}<td class="go">${CHEV}</td></tr>`).join("")+
+      `</tbody><tfoot><tr><td class="rk"></td><td class="nm">Total ${esc(scopeLabel()=="Todas as gerências"?"":scopeLabel())}</td><td class="num">${nf(all.meta)}</td><td class="num">${nf(totReal)}</td>${cell(totP)}<td class="go"></td></tr></tfoot></table></div>`;
     h+=`<button class="listtoggle" id="lt">Ver a lista de clientes${st.gc?" de "+esc(scopeLabel()):""}</button>`;
   }else{
     let cl=groupClients(ts);
@@ -467,6 +485,7 @@ function render(){
   document.querySelectorAll("[data-mis]").forEach(b=>b.onclick=()=>{const v=+b.dataset.mis;st.mis=st.mis===v?null:v;st.fam=null;st.lim=40;render();});
   document.querySelectorAll("[data-fam]").forEach(b=>b.onclick=()=>{const f=b.dataset.fam;st.fam=st.fam==f?null:f;st.mis=st.fam?1:null;st.lim=40;render();});
   document.querySelectorAll("[data-sit]").forEach(b=>b.onclick=()=>{const s=b.dataset.sit||null;st.sit=st.sit==s?null:s;if(st.sit&&!st.rt)st.lista=true;st.lim=40;render();});
+  document.querySelectorAll("tr[data-nav]").forEach(b=>b.onkeydown=e=>{if(e.key=="Enter")b.click();});
   document.querySelectorAll("[data-nav]").forEach(b=>b.onclick=()=>{const k=b.dataset.nav;
     if(lvl=="gc")st.gc=k;else if(lvl=="sv")st.sv=k;else st.rt=k;st.lista=false;st.lim=40;render();window.scrollTo({top:0});});
   const lt=el("lt");if(lt)lt.onclick=()=>{st.lista=!st.lista;st.sit=null;st.lim=40;render();};

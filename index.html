@@ -118,7 +118,8 @@
 
   .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
   table.cons{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
-  .cons th{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--tx3);font-weight:700;text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+  .cons th{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--tx3);font-weight:700;text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);white-space:nowrap;line-height:1.25;vertical-align:bottom}
+  .cons th.num{text-align:right}
   .cons td{padding:10px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
   .cons tbody tr{cursor:pointer;transition:background .12s}
   .cons tbody tr:hover,.cons tbody tr:focus-visible{background:var(--card2);outline:none}
@@ -130,7 +131,7 @@
   .cons .pc i{display:block;width:64px;height:4px;border-radius:2px;background:var(--bg);overflow:hidden}
   .cons .pc i b{display:block;height:100%}
   .cons tfoot td{border-bottom:none;border-top:1px solid var(--line2);font-weight:800;background:var(--card2)}
-  @media (max-width:420px){.cons th,.cons td{padding:9px 5px}.cons .rk{padding-left:9px;width:24px}.cons .pc i{width:48px}.cons th{font-size:9.5px}}
+  @media (max-width:480px){.cons{font-size:12px}.cons th,.cons td{padding:9px 4px}.cons .rk{padding-left:8px;width:22px}.cons .pc i{width:38px}.cons th{font-size:9px;letter-spacing:.03em}.cons .go{display:none}}
   .help{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:14px;overflow:hidden}
   .help summary{list-style:none;cursor:pointer;padding:12px 14px;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:space-between}
   .help summary::-webkit-details-marker{display:none}
@@ -457,15 +458,15 @@ function render(){
   if(lvl&&!showList){
     const key=lvl;
     const groups={};geo.forEach(t=>{(groups[t[key]]=groups[t[key]]||[]).push(t);});
-    const rows=Object.entries(groups).map(([k,v])=>{const g=agg(v);const real=lvl=="rt"?g.done:g.doneCap;return {k,meta:g.meta,real,p:g.meta?real/g.meta*100:0};})
+    const rows=Object.entries(groups).map(([k,v])=>{const g=agg(v);const real=lvl=="rt"?g.done:g.doneCap;return {k,meta:g.meta,real,dr:g.dr,dol:g.dol,falta:g.meta-g.doneCap,p:g.meta?real/g.meta*100:0};})
       .sort((x,y)=>(y.p-x.p)||(y.real-x.real)||natural(x.k,y.k));
     const nome=lvl=="gc"?"Gerência":(lvl=="sv"?"Supervisor":"Rota");
     const title=lvl=="gc"?"Consolidado por gerência":(lvl=="sv"?"Consolidado por supervisor · "+st.gc:"Consolidado por rota · "+st.sv);
     const totReal=st.rt?all.done:all.doneCap, totP=all.meta?totReal/all.meta*100:0;
     const cell=(p)=>{const r=Math.round(p);return `<td class="num"><div class="pc"><span style="color:${pctColor(r)}">${r}%</span><i><b style="width:${Math.min(100,p)}%;background:${pctColor(r)}"></b></i></div></td>`;};
-    h+=`<div class="sechead">${esc(title)} · do melhor para o pior</div><div class="tblwrap"><table class="cons"><thead><tr><th class="rk">#</th><th>${nome}</th><th class="num">Meta</th><th class="num">Real</th><th class="num">% Real × Meta</th><th class="go"></th></tr></thead><tbody>`+
-      rows.map((r,i)=>`<tr data-nav="${esc(r.k)}" tabindex="0"><td class="rk">${i+1}º</td><td class="nm">${esc(r.k)}</td><td class="num">${nf(r.meta)}</td><td class="num"><b>${nf(r.real)}</b></td>${cell(r.p)}<td class="go">${CHEV}</td></tr>`).join("")+
-      `</tbody><tfoot><tr><td class="rk"></td><td class="nm">Total ${esc(scopeLabel()=="Todas as gerências"?"":scopeLabel())}</td><td class="num">${nf(all.meta)}</td><td class="num">${nf(totReal)}</td>${cell(totP)}<td class="go"></td></tr></tfoot></table></div>`;
+    h+=`<div class="sechead">${esc(title)} · do melhor para o pior</div><div class="tblwrap"><table class="cons"><thead><tr><th class="rk">#</th><th>${nome}</th><th class="num">Meta</th><th class="num">Realizado<br>até ontem</th><th class="num">Online</th><th class="num">Falta<br>p/ meta</th><th class="num">% Real<br>× Meta</th><th class="go"></th></tr></thead><tbody>`+
+      rows.map((r,i)=>`<tr data-nav="${esc(r.k)}" tabindex="0"><td class="rk">${i+1}º</td><td class="nm">${esc(r.k)}</td><td class="num">${nf(r.meta)}</td><td class="num v-ok"><b>${nf(r.dr)}</b></td><td class="num"><b>${nf(r.dol)}</b></td><td class="num ${r.falta?'v-red':'v-ok'}"><b>${r.falta?nf(r.falta):"✓"}</b></td>${cell(r.p)}<td class="go">${CHEV}</td></tr>`).join("")+
+      `</tbody><tfoot><tr><td class="rk"></td><td class="nm">Total ${esc(scopeLabel()=="Todas as gerências"?"":scopeLabel())}</td><td class="num">${nf(all.meta)}</td><td class="num v-ok">${nf(all.dr)}</td><td class="num">${nf(all.dol)}</td><td class="num ${(all.meta-all.doneCap)?'v-red':'v-ok'}">${(all.meta-all.doneCap)?nf(all.meta-all.doneCap):"✓"}</td>${cell(totP)}<td class="go"></td></tr></tfoot></table></div>`;
     h+=`<button class="listtoggle" id="lt">Ver a lista de clientes${st.gc?" de "+esc(scopeLabel()):""}</button>`;
   }else{
     let cl=groupClients(ts);

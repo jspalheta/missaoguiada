@@ -372,12 +372,10 @@ function exportXLSX(cl){
   const plan=[];
   cl.forEach(c=>c.tasks.forEach(t=>plan.push({
     "Gerência":t.gc,"Supervisor":t.sv,"Rota":t.rt,"Dia de visita / pedido":t.dia||"Sem dia",
-    "Cód. cliente":+t.cod,"Cliente":t.nome,"Segmento":t.seg,"Missão":MIS[t.tipo],"Pilar / Família":t.fam,
+    "Cód. cliente":+t.cod,"Cliente":t.nome,"Missão":MIS[t.tipo],
     "Cód. produto":+t.pc,"Produto":t.prod,
-    "Realizado até ontem":t.real?1:0,"Online hoje":(t.onl&&!t.real)?1:0,
-    "Status":t.real?"Realizado até ontem":(t.onl?"Online hoje":"Pendente"),
-    "Positivado":c.tasks.some(x=>x.real)?"Positivado":(c.pos?"Positivado online":"Não positivado"),
-    "Por quê":t.pq,"Argumento para o cliente":t.arg})));
+    "Realizado até ontem":t.real?1:0,"Online":(t.onl&&!t.real)?1:0,
+    "Status":t.real?"Realizado até ontem":(t.onl?"Online":"Pendente")})));
   // aba 2: consolidado por rota (meta 10 por rota)
   const per={};
   cl.forEach(c=>c.tasks.forEach(t=>{const r=per[t.rt]=per[t.rt]||{g:t.gc,s:t.sv,rt:t.rt,dr:0,dol:0,d:0,n:0,cli:new Set()};r.n++;r.cli.add(t.cod);if(t.real)r.dr++;else if(t.onl)r.dol++;if(t.done)r.d++;}));
@@ -389,7 +387,7 @@ function exportXLSX(cl){
   if(window.XLSX){
     const wb=XLSX.utils.book_new();
     const w1=XLSX.utils.json_to_sheet(plan);
-    w1["!cols"]=[10,11,7,14,11,32,14,17,15,10,34,10,9,19,17,60,50].map(w=>({wch:w}));
+    w1["!cols"]=[10,11,7,14,11,34,17,10,34,10,8,19].map(w=>({wch:w}));
     w1["!autofilter"]={ref:w1["!ref"]};
     const w2=XLSX.utils.json_to_sheet(cons);
     w2["!cols"]=[10,11,7,7,10,9,10,10,10,10].map(w=>({wch:w}));

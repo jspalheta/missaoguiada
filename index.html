@@ -6,6 +6,7 @@
 <title>Missões Guiadas · Novembro</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   /* Mesma identidade do Painel de Oportunidades B2B: grafite, vermelho Bandeirantes, Inter. Coluna única mobile-first. */
@@ -365,13 +366,46 @@ function clientCard(c,showRoute){
   const mini=c.tasks.map(t=>`<div><i style="background:${t.real?'var(--ok)':(t.onl?'#fff':(t.tipo==0?'var(--warn)':'var(--blue)'))}"></i><span><b style="color:var(--tx);font-weight:600">${t.tipo==0?"Traga de Volta":"Aumente a Família"}:</b> ${esc(t.prod)}${t.real?" ✓ realizado":(t.onl?" ● online":"")}</span></div>`).join("");
   return `<details class="ccard ${c.pos?(soOnl?'onlc':'pos'):'npos'}"><summary><div class="crow"><div><div class="cname">${esc(c.nome)}</div><div class="muted">${esc(c.cod)} · ${esc(c.seg)}${showRoute?" · Rota "+esc(c.rt):""}</div></div>${CHEV}</div><div class="ctags">${tags.join("")}</div><div class="cmini">${mini}</div></summary><div class="cbody">${c.tasks.map(taskHTML).join("")}</div></details>`;
 }
-function exportCSV(cl){
-  const cols=["Gerência","Supervisor","Rota","Dia de visita","Cód. cliente","Cliente","Segmento","Positivado","Missão","Pilar / Família","Cód. produto","Produto","Status","Nível","Por quê","Argumento para o cliente"];
-  const e=v=>{v=v==null?"":String(v);return /[";\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
-  let csv=cols.join(";")+"\r\n";
-  cl.forEach(c=>c.tasks.forEach(t=>{csv+=[t.gc,t.sv,t.rt,t.dia,t.cod,t.nome,t.seg,c.pos?"Sim":"Não",MIS[t.tipo],t.fam,t.pc,t.prod,t.real?"Realizado até ontem":(t.onl?"Online hoje":"Pendente"),t.niv,t.pq,t.arg].map(e).join(";")+"\r\n";}));
-  const nome="missoes_nov_"+scopeLabel().replace(/[^a-z0-9]+/gi,"-").toLowerCase()+(st.dias.length?"_"+st.dias.join("-").toLowerCase():"")+(st.sit?"_"+st.sit:"")+".csv";
-  try{const blob=new Blob(["﻿"+csv],{type:"text/csv;charset=utf-8;"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=nome;document.body.appendChild(a);a.click();a.remove();}catch(err){}
+function exportXLSX(cl){
+  const stamp=REAL_DATA||new Date().toLocaleString("pt-BR");
+  // aba 1: planificado cliente a cliente
+  const plan=[];
+  cl.forEach(c=>c.tasks.forEach(t=>plan.push({
+    "Gerência":t.gc,"Supervisor":t.sv,"Rota":t.rt,"Dia de visita / pedido":t.dia||"Sem dia",
+    "Cód. cliente":+t.cod,"Cliente":t.nome,"Segmento":t.seg,"Missão":MIS[t.tipo],"Pilar / Família":t.fam,
+    "Cód. produto":+t.pc,"Produto":t.prod,
+    "Realizado até ontem":t.real?1:0,"Online hoje":(t.onl&&!t.real)?1:0,
+    "Status":t.real?"Realizado até ontem":(t.onl?"Online hoje":"Pendente"),
+    "Positivado":c.tasks.some(x=>x.real)?"Positivado":(c.pos?"Positivado online":"Não positivado"),
+    "Por quê":t.pq,"Argumento para o cliente":t.arg})));
+  // aba 2: consolidado por rota (meta 10 por rota)
+  const per={};
+  cl.forEach(c=>c.tasks.forEach(t=>{const r=per[t.rt]=per[t.rt]||{g:t.gc,s:t.sv,rt:t.rt,dr:0,dol:0,d:0,n:0,cli:new Set()};r.n++;r.cli.add(t.cod);if(t.real)r.dr++;else if(t.onl)r.dol++;if(t.done)r.d++;}));
+  const cons=Object.values(per).sort((a,b)=>natural(a.g,b.g)||natural(a.s,b.s)||natural(a.rt,b.rt)).map(r=>({
+    "Gerência":r.g,"Supervisor":r.s,"Rota":r.rt,"Meta":CONFIG.META,"Realizado até ontem":r.dr,"Online hoje":r.dol,
+    "Falta p/ meta":Math.max(0,CONFIG.META-r.d),"% Real × Meta":CONFIG.META?Math.round(r.d/CONFIG.META*1000)/1000:0,
+    "Tarefas no recorte":r.n,"Clientes no recorte":r.cli.size}));
+  const nome="missoes_nov_"+scopeLabel().replace(/[^a-z0-9]+/gi,"-").toLowerCase()+(st.dias.length?"_"+st.dias.join("-").toLowerCase():"")+(st.sit?"_"+st.sit:"");
+  if(window.XLSX){
+    const wb=XLSX.utils.book_new();
+    const w1=XLSX.utils.json_to_sheet(plan);
+    w1["!cols"]=[10,11,7,14,11,32,14,17,15,10,34,10,9,19,17,60,50].map(w=>({wch:w}));
+    w1["!autofilter"]={ref:w1["!ref"]};
+    const w2=XLSX.utils.json_to_sheet(cons);
+    w2["!cols"]=[10,11,7,7,10,9,10,10,10,10].map(w=>({wch:w}));
+    w2["!autofilter"]={ref:w2["!ref"]};
+    const rg=XLSX.utils.decode_range(w2["!ref"]);for(let R=1;R<=rg.e.r;R++){const a=XLSX.utils.encode_cell({r:R,c:7});if(w2[a])w2[a].z="0%";}
+    const info=XLSX.utils.aoa_to_sheet([["Missões Guiadas · Novembro/26"],["Recorte",scopeLabel()],["Dia de visita",st.dias.length?st.dias.join(", "):"Todos"],["Filtro",st.sit?SIT[st.sit].l:"Todos"],["Realizado enviado em",stamp],["Meta","10 tarefas concluídas por rota (consultor), até "+CONFIG.PRAZO]]);
+    info["!cols"]=[{wch:22},{wch:50}];
+    XLSX.utils.book_append_sheet(wb,w1,"Planificado");
+    XLSX.utils.book_append_sheet(wb,w2,"Consolidado por rota");
+    XLSX.utils.book_append_sheet(wb,info,"Sobre");
+    XLSX.writeFile(wb,nome+".xlsx");
+  }else{
+    const cols=Object.keys(plan[0]||{});const e=v=>{v=v==null?"":String(v);return /[";\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
+    let csv=cols.join(";")+"\r\n";plan.forEach(r=>{csv+=cols.map(c=>e(r[c])).join(";")+"\r\n";});
+    try{const blob=new Blob(["﻿"+csv],{type:"text/csv;charset=utf-8;"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=nome+".csv";document.body.appendChild(a);a.click();a.remove();}catch(err){}
+  }
 }
 
 /* ---------- render ---------- */
@@ -452,7 +486,7 @@ function render(){
   </div></details>`;
 
   // navegação ou lista
-  let h="";
+  let h="";let expList=null;
   const lvl=st.rt?null:(st.sv?"rt":(st.gc?"sv":"gc"));
   const showList=st.rt||st.lista;
   if(lvl&&!showList){
@@ -464,7 +498,7 @@ function render(){
     const title=lvl=="gc"?"Consolidado por gerência":(lvl=="sv"?"Consolidado por supervisor · "+st.gc:"Consolidado por rota · "+st.sv);
     const totReal=st.rt?all.done:all.doneCap, totP=all.meta?totReal/all.meta*100:0;
     const cell=(p)=>{const r=Math.round(p);return `<td class="num"><div class="pc"><span style="color:${pctColor(r)}">${r}%</span><i><b style="width:${Math.min(100,p)}%;background:${pctColor(r)}"></b></i></div></td>`;};
-    h+=`<div class="sechead">${esc(title)} · do melhor para o pior</div><div class="tblwrap"><table class="cons"><thead><tr><th class="rk">#</th><th>${nome}</th><th class="num">Meta</th><th class="num">Realizado<br>até ontem</th><th class="num">Online</th><th class="num">Falta<br>p/ meta</th><th class="num">% Real<br>× Meta</th><th class="go"></th></tr></thead><tbody>`+
+    h+=`<div class="listtop"><div class="sechead" style="margin:0">${esc(title)} · do melhor para o pior</div><button class="expbtn" id="exp">Exportar Excel</button></div><div class="tblwrap" style="margin-top:8px"><table class="cons"><thead><tr><th class="rk">#</th><th>${nome}</th><th class="num">Meta</th><th class="num">Realizado<br>até ontem</th><th class="num">Online</th><th class="num">Falta<br>p/ meta</th><th class="num">% Real<br>× Meta</th><th class="go"></th></tr></thead><tbody>`+
       rows.map((r,i)=>`<tr data-nav="${esc(r.k)}" tabindex="0"><td class="rk">${i+1}º</td><td class="nm">${esc(r.k)}</td><td class="num">${nf(r.meta)}</td><td class="num v-ok"><b>${nf(r.dr)}</b></td><td class="num"><b>${nf(r.dol)}</b></td><td class="num ${r.falta?'v-red':'v-ok'}"><b>${r.falta?nf(r.falta):"✓"}</b></td>${cell(r.p)}<td class="go">${CHEV}</td></tr>`).join("")+
       `</tbody><tfoot><tr><td class="rk"></td><td class="nm">Total ${esc(scopeLabel()=="Todas as gerências"?"":scopeLabel())}</td><td class="num">${nf(all.meta)}</td><td class="num v-ok">${nf(all.dr)}</td><td class="num">${nf(all.dol)}</td><td class="num ${(all.meta-all.doneCap)?'v-red':'v-ok'}">${(all.meta-all.doneCap)?nf(all.meta-all.doneCap):"✓"}</td>${cell(totP)}<td class="go"></td></tr></tfoot></table></div>`;
     h+=`<button class="listtoggle" id="lt">Ver a lista de clientes${st.gc?" de "+esc(scopeLabel()):""}</button>`;
@@ -472,12 +506,12 @@ function render(){
     let cl=groupClients(ts);
     const cnt={};Object.keys(SIT).forEach(k=>cnt[k]=cl.filter(SIT[k].f).length);
     if(st.sit)cl=cl.filter(SIT[st.sit].f);
-    h+=`<div class="listtop"><div class="sechead" style="margin:0">${nf(cl.length)} clientes${esc(lblDia)}</div><button class="expbtn" id="exp">Exportar planilha</button></div>`;
+    h+=`<div class="listtop"><div class="sechead" style="margin:0">${nf(cl.length)} clientes${esc(lblDia)}</div><button class="expbtn" id="exp">Exportar Excel</button></div>`;
     if(st.lista&&!st.rt)h+=`<button class="listtoggle" id="lt" style="margin:6px 0 0">Voltar para a lista por ${lvl=="gc"?"gerência":(lvl=="sv"?"supervisor":"rota")}</button>`;
     h+=`<span class="fflbl">Situação</span><div class="arqfilters"><button class="afchip${!st.sit?' on':''}" data-sit="">Todos</button>${Object.keys(SIT).map(k=>`<button class="afchip${st.sit==k?' on':''}" data-sit="${k}">${SIT[k].l} <b>${cnt[k]}</b></button>`).join("")}</div>`;
     h+='<div class="list">'+(cl.slice(0,st.lim).map(c=>clientCard(c,!st.rt)).join("")||'<div class="muted">Nenhum cliente neste filtro.</div>')+'</div>';
     if(cl.length>st.lim)h+=`<button class="more" id="more">Mostrar mais ${Math.min(60,cl.length-st.lim)} de ${nf(cl.length-st.lim)} restantes</button>`;
-    var expList=cl;
+    expList=cl;
   }
   el("view").innerHTML=h;
   el("foot").innerHTML=`Base atualizada com a audiência do app e o dia de visita · ${nf(TASKS.length)} tarefas em ${ROTAS.length} rotas. Positivado = cliente que concluiu a missão (item da missão no pedido). Clientes escolhidos pelo histórico de compra (venda SAP de 01/07 a 30/10/2026). O grupo de controle não recebe missão e não aparece aqui.`;
@@ -491,7 +525,7 @@ function render(){
     if(lvl=="gc")st.gc=k;else if(lvl=="sv")st.sv=k;else st.rt=k;st.lista=false;st.lim=40;render();window.scrollTo({top:0});});
   const lt=el("lt");if(lt)lt.onclick=()=>{st.lista=!st.lista;st.sit=null;st.lim=40;render();};
   const mo=el("more");if(mo)mo.onclick=()=>{st.lim+=60;render();};
-  const ex=el("exp");if(ex)ex.onclick=()=>exportCSV(expList);
+  const ex=el("exp");if(ex)ex.onclick=()=>exportXLSX(expList||groupClients(ts));
 }
 function bindCrumb(){
   document.querySelectorAll(".crumb a").forEach(a=>a.onclick=()=>{const l=a.dataset.lvl;el("search").value="";

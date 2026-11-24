@@ -452,13 +452,13 @@ function render(){
   el("crumb").innerHTML=cb;
 
   // incentivo — real sobre a meta (10 concluídas por consultor)
-  const real=st.rt?all.done:all.doneCap;
+  const real=all.done;
   const pct=all.meta?Math.round(real/all.meta*100):0;
   const falta=Math.max(0,all.meta-real);
   const dp=diasPrazo();
   el("inc").innerHTML=`<div class="inc"><div class="main">${ring(pct)}<div class="info"><div class="lbl">Incentivo · Missões · ${esc(scopeLabel())}</div><div class="big">${nf(real)}<span>/${nf(all.meta)}</span></div><div class="falta">${falta?`falta <b>${nf(falta)}</b> tarefa${falta>1?"s":""} concluída${falta>1?"s":""}`:`<b class="ok">meta batida</b>`}${st.rt?"":` · <b class="${all.bateu==all.rotas?'ok':''}" style="color:var(--tx)">${all.bateu}/${all.rotas}</b> consultores na meta`}</div></div></div>
     <div class="incfoot"><div><div class="v">${CONFIG.META} <span class="muted" style="font-weight:600">de ${CONFIG.TAREFAS}</span></div><div class="s">meta de concluídas por consultor</div></div><div><div class="v v-warn">${CONFIG.PRAZO.slice(0,5)}</div><div class="s">data limite${dp?" · faltam "+dp+" dia"+(dp>1?"s":""):" · encerrado"}</div></div><div><div class="v">${nf(all.dr)} <span class="muted" style="font-weight:600">+ ${nf(all.dol)}</span></div><div class="s">realizado até ontem + online hoje</div></div></div>
-    <div class="rule">Cada consultor tem <b>${CONFIG.TAREFAS} tarefas</b> e a meta é concluir <b>${CONFIG.META}</b>. A tarefa conclui (cliente positivado) quando o item da missão entra no pedido: conta o realizado até ontem e o pedido online de hoje, de ${CONFIG.INICIO.slice(0,5)} até <b>${CONFIG.PRAZO}</b>.${st.rt?"":" No total do recorte, cada consultor conta no máximo 10."}</div></div>`;
+    <div class="rule">Cada consultor tem <b>${CONFIG.TAREFAS} tarefas</b> e a meta é concluir <b>${CONFIG.META}</b>. A tarefa conclui (cliente positivado) quando o item da missão entra no pedido: conta o realizado até ontem e o pedido online de hoje, de ${CONFIG.INICIO.slice(0,5)} até <b>${CONFIG.PRAZO}</b>.${st.rt?"":" No supervisor, na gerência e no total vale a soma de tudo o que as rotas fizeram: quem passa de 10 ajuda a equipe, mas o consultor só bate a meta individual com 10."}</div></div>`;
 
   // foco
   let fx;
@@ -512,15 +512,15 @@ function render(){
   if(lvl&&!showList){
     const key=lvl;
     const groups={};geo.forEach(t=>{(groups[t[key]]=groups[t[key]]||[]).push(t);});
-    const rows=Object.entries(groups).map(([k,v])=>{const g=agg(v);const real=lvl=="rt"?g.done:g.doneCap;return {k,meta:g.meta,real,dr:g.dr,dol:g.dol,falta:g.meta-g.doneCap,p:g.meta?real/g.meta*100:0};})
+    const rows=Object.entries(groups).map(([k,v])=>{const g=agg(v);const real=g.done;return {k,meta:g.meta,real,dr:g.dr,dol:g.dol,falta:Math.max(0,g.meta-g.done),p:g.meta?real/g.meta*100:0};})
       .sort((x,y)=>(y.p-x.p)||(y.real-x.real)||natural(x.k,y.k));
     const nome=lvl=="gc"?"Gerência":(lvl=="sv"?"Supervisor":"Rota");
     const title=lvl=="gc"?"Consolidado por gerência":(lvl=="sv"?"Consolidado por supervisor · "+st.gc:"Consolidado por rota · "+st.sv);
-    const totReal=st.rt?all.done:all.doneCap, totP=all.meta?totReal/all.meta*100:0;
+    const totReal=all.done, totP=all.meta?totReal/all.meta*100:0;
     const cell=(p)=>{const r=Math.round(p);return `<td class="num"><div class="pc"><span style="color:${pctColor(r)}">${r}%</span><i><b style="width:${Math.min(100,p)}%;background:${pctColor(r)}"></b></i></div></td>`;};
     h+=`<div class="listtop"><div class="sechead" style="margin:0">${esc(title)} · do melhor para o pior</div><button class="expbtn" id="exp">Exportar Excel</button></div><div class="tblwrap" style="margin-top:8px"><table class="cons"><thead><tr><th class="rk">#</th><th>${nome}</th><th class="num">Meta</th><th class="num">Realizado<br>até ontem</th><th class="num">Online</th><th class="num">Falta<br>p/ meta</th><th class="num">% Real<br>× Meta</th><th class="go"></th></tr></thead><tbody>`+
       rows.map((r,i)=>`<tr data-nav="${esc(r.k)}" tabindex="0"><td class="rk">${i+1}º</td><td class="nm">${esc(r.k)}</td><td class="num">${nf(r.meta)}</td><td class="num v-ok"><b>${nf(r.dr)}</b></td><td class="num"><b>${nf(r.dol)}</b></td><td class="num ${r.falta?'v-red':'v-ok'}"><b>${r.falta?nf(r.falta):"✓"}</b></td>${cell(r.p)}<td class="go">${CHEV}</td></tr>`).join("")+
-      `</tbody><tfoot><tr><td class="rk"></td><td class="nm">Total ${esc(scopeLabel()=="Todas as gerências"?"":scopeLabel())}</td><td class="num">${nf(all.meta)}</td><td class="num v-ok">${nf(all.dr)}</td><td class="num">${nf(all.dol)}</td><td class="num ${(all.meta-all.doneCap)?'v-red':'v-ok'}">${(all.meta-all.doneCap)?nf(all.meta-all.doneCap):"✓"}</td>${cell(totP)}<td class="go"></td></tr></tfoot></table></div>`;
+      `</tbody><tfoot><tr><td class="rk"></td><td class="nm">Total ${esc(scopeLabel()=="Todas as gerências"?"":scopeLabel())}</td><td class="num">${nf(all.meta)}</td><td class="num v-ok">${nf(all.dr)}</td><td class="num">${nf(all.dol)}</td><td class="num ${(all.meta>all.done)?'v-red':'v-ok'}">${(all.meta>all.done)?nf(all.meta-all.done):"✓"}</td>${cell(totP)}<td class="go"></td></tr></tfoot></table></div>`;
     h+=`<button class="listtoggle" id="lt">Ver a lista de clientes${st.gc?" de "+esc(scopeLabel()):""}</button>`;
   }else{
     let cl=groupClients(ts);

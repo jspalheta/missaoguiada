@@ -1,5 +1,5 @@
 codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atualizado_em
-1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;25/11/2026 11:43:17
+1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;25/11/2026 14:11:31
 1144879;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1061967;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1138640;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
@@ -252,7 +252,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1118237;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1156148;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1133119;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1145534;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1145534;3519;0;1;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1168621;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1110057;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1009472;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;

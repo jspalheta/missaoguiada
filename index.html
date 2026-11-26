@@ -32,6 +32,14 @@
   .top h1 em{font-style:normal;color:var(--acc);font-weight:500}
   .top .sub{font-size:11px;color:var(--tx2);margin-top:3px;letter-spacing:.02em}
   .btn-ghost{background:transparent;border:1px solid var(--line2);color:#fff;font-size:13px;font-weight:600;border-radius:10px;padding:8px 11px;flex:none}
+  .upd{flex:none;display:flex;align-items:center;gap:9px;padding:8px 12px;border-radius:12px;border:1px solid rgba(47,220,160,.45);background:rgba(47,220,160,.10);max-width:52%}
+  .upd .dot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(47,220,160,.6);animation:pulseok 2s infinite}
+  .upd b{display:block;font-size:13px;font-weight:800;color:var(--tx);line-height:1.2}
+  .upd span:not(.dot){display:block;font-size:11px;color:var(--tx2);margin-top:2px;line-height:1.2}
+  .upd.warn{border-color:var(--warn-line);background:var(--warn-bg)}
+  .upd.warn .dot{background:var(--warn);animation:none}
+  @keyframes pulseok{0%{box-shadow:0 0 0 0 rgba(47,220,160,.55)}70%{box-shadow:0 0 0 7px rgba(47,220,160,0)}100%{box-shadow:0 0 0 0 rgba(47,220,160,0)}}
+  @media (max-width:420px){.upd{padding:7px 9px;gap:7px}.upd b{font-size:12px}.upd span:not(.dot){font-size:10.5px}}
   .stickybar{position:sticky;top:0;z-index:20;background:var(--bg)}
   .filterbar{background:var(--graphite);padding:9px max(12px,env(safe-area-inset-right,0px)) 10px max(12px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line)}
   .filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
@@ -199,6 +207,7 @@
 <div class="stickybar">
   <div class="top"><div class="in row between">
     <div style="min-width:0"><div class="brand">Bandeirantes · Missões Guiadas</div><h1>Oportunidades <em>Missões no App</em></h1><div class="sub" id="status">carregando…</div></div>
+    <div id="upd" class="upd" aria-live="polite"></div>
   </div></div>
   <div class="filterbar"><div class="in">
     <div class="filters"><select id="fgc" aria-label="Gerência"></select><select id="fsv" aria-label="Supervisor"></select><select id="frt" aria-label="Rota"></select></div>
@@ -231,6 +240,7 @@ const CONFIG = {
   META: 10,              // tarefas concluídas por consultor
   TAREFAS: 20,           // tarefas por consultor
   PRAZO: "30/11/2026",
+  ROBO_INICIO: 8, ROBO_FIM: 18,   // horário do robô (de hora em hora)
   INICIO: "01/11/2026"
 };
 /* ===================================== */
@@ -303,6 +313,25 @@ function applyReal(rows){
   });
   TASKS.forEach(t=>{if(t.done)POS.add(t.cod);});
 }
+function parseStamp(s){const m=String(s||"").match(/(\d{2})\/(\d{2})\/(\d{4})\s+(\d{2}):(\d{2})/);return m?new Date(+m[3],+m[2]-1,+m[1],+m[4],+m[5]):null;}
+function nextRun(now){ // de hora em hora, 08h-18h, segunda a sábado
+  const d=new Date(now);d.setMinutes(0,0,0);d.setHours(d.getHours()+1);
+  for(let i=0;i<14*24;i++){const h=d.getHours(),w=d.getDay();if(w!==0&&h>=CONFIG.ROBO_INICIO&&h<=CONFIG.ROBO_FIM)return d;d.setHours(d.getHours()+1);}
+  return null;}
+function renderUpd(){
+  const box=el("upd");if(!box)return;
+  if(!REAL_OK){box.className="upd warn";box.innerHTML='<span class="dot"></span><div><b>Realizado não carregado</b><span>aguardando a próxima atualização</span></div>';return;}
+  const now=new Date(), t=parseStamp(REAL_DATA);
+  const dd=x=>x.toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit"}), hh=x=>x.toTimeString().slice(0,5);
+  const same=(a,b)=>a.toDateString()===b.toDateString();
+  const ontem=new Date(now);ontem.setDate(now.getDate()-1);
+  const quando=!t?esc(REAL_DATA):(same(t,now)?"hoje às "+hh(t):(same(t,ontem)?"ontem às "+hh(t):dd(t)+" às "+hh(t)));
+  const nx=nextRun(now);const prox=nx?(same(nx,now)?"às "+hh(nx):(dd(nx)+" às "+hh(nx))):"";
+  const velho=t&&(now-t)>2.5*36e5&&(()=>{const p=nextRun(new Date(t));return p&&p<new Date(now-30*6e4);})();
+  box.className="upd"+(velho?" warn":"");
+  box.innerHTML=`<span class="dot"></span><div><b>Atualizado ${quando}</b><span>${velho?"atualização atrasada":(prox?"próxima "+prox:"")}</span></div>`;
+}
+setInterval(renderUpd,60000);
 async function load(){
   el("status").textContent="carregando…";REAL_ERR="";
   const u=CONFIG.REAL_CSV;
@@ -313,7 +342,8 @@ async function load(){
   else{REAL_OK=false;applyReal([]);}
   render();
   const when=REAL_DATA?("enviado em "+REAL_DATA):("lido às "+new Date().toTimeString().slice(0,5));
-  el("status").textContent="Novembro/26 · prazo "+CONFIG.PRAZO.slice(0,5)+" · "+(REAL_OK?when:"realizado não conectado");
+  el("status").textContent="Novembro/26 · prazo "+CONFIG.PRAZO.slice(0,5);
+  renderUpd();
 }
 
 /* ---------- agregações ---------- */

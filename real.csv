@@ -1,5 +1,5 @@
 codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atualizado_em
-1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;26/11/2026 15:03:47
+1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;26/11/2026 16:03:56
 1144879;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1061967;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1138640;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
@@ -867,7 +867,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1107514;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1045112;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1215323;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
-1106530;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
+1106530;3551;0;1;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1036837;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1122442;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1032247;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
@@ -2605,7 +2605,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1093864;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1220627;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1075891;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
-1214949;1511;0;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
+1214949;1511;0;1;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1115326;1511;0;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1222857;1511;0;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1092098;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
@@ -3174,7 +3174,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1193612;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1136022;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1085082;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
-1202406;2446;0;0;Traga de volta;SPRITE LIM PT 2L CX06;
+1202406;2446;0;1;Traga de volta;SPRITE LIM PT 2L CX06;
 1210706;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1180640;2446;0;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1214914;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;

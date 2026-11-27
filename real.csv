@@ -1,5 +1,5 @@
 codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atualizado_em
-1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;27/11/2026 00:15:56
+1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;27/11/2026 08:03:54
 1144879;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1061967;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1138640;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
@@ -72,7 +72,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1130020;1555;1;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1224787;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1206377;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
-1134622;1555;0;1;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
+1134622;1555;1;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1078209;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1064153;1555;1;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1193842;1555;1;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
@@ -132,7 +132,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1192141;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1057216;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1142302;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1181425;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1181425;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1114861;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1141722;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1214232;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
@@ -153,23 +153,23 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1146551;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1003071;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1031367;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1117727;3519;0;1;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1117727;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1099671;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1159399;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1186749;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1108439;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1095023;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1090885;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1090885;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1131142;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1057082;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1198571;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1160733;3519;0;1;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1160733;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1017113;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1080200;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1158446;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1060353;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1144587;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1188843;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1188843;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1213705;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1164046;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1139952;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
@@ -179,8 +179,8 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1198910;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1209076;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1088740;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1192535;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1148918;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1192535;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1148918;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1118714;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1186791;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1027623;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
@@ -264,7 +264,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1217880;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1112635;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1213781;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1172746;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1172746;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1088550;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1158951;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1050907;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
@@ -304,7 +304,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1222542;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1210017;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1184297;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1186423;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1186423;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1201209;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1226431;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1191603;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
@@ -364,7 +364,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1186108;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1007260;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1220863;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1077678;3519;0;1;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1077678;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1161517;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1098185;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1178595;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
@@ -404,7 +404,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1202803;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1114995;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1205574;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1055496;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1055496;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1193860;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1146696;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1166328;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
@@ -563,7 +563,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1171650;3389;0;0;Aumente a Família;DV FRUT CITRUS PT 1L;
 1119410;3389;0;0;Aumente a Família;DV FRUT CITRUS PT 1L;
 1168318;3389;0;0;Aumente a Família;DV FRUT CITRUS PT 1L;
-1053491;2321;0;0;Aumente a Família;DV FRUT LAR PT 1,5L;
+1053491;2321;1;0;Aumente a Família;DV FRUT LAR PT 1,5L;
 1069997;2321;1;0;Aumente a Família;DV FRUT LAR PT 1,5L;
 1060519;2321;1;0;Aumente a Família;DV FRUT LAR PT 1,5L;
 1223343;2321;1;0;Aumente a Família;DV FRUT LAR PT 1,5L;
@@ -578,7 +578,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1153240;2321;0;0;Aumente a Família;DV FRUT LAR PT 1,5L;
 1165787;2321;1;0;Aumente a Família;DV FRUT LAR PT 1,5L;
 1213756;2321;0;0;Aumente a Família;DV FRUT LAR PT 1,5L;
-1207917;2321;0;0;Aumente a Família;DV FRUT LAR PT 1,5L;
+1207917;2321;1;0;Aumente a Família;DV FRUT LAR PT 1,5L;
 1175993;2321;1;0;Aumente a Família;DV FRUT LAR PT 1,5L;
 1156313;2321;0;0;Aumente a Família;DV FRUT LAR PT 1,5L;
 1134471;2321;1;0;Aumente a Família;DV FRUT LAR PT 1,5L;
@@ -680,13 +680,13 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1172643;3633;0;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
 1144568;3633;0;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
 1113601;3633;0;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
-1202360;3633;0;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
+1202360;3633;1;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
 1224708;3633;0;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
 1092035;3633;0;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
 1198023;3633;1;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
 1211630;3633;0;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
 1221876;3633;1;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
-1191852;3633;0;1;Aumente a Família;POWERADE UVA PT 500ML CX06;
+1191852;3633;1;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
 1207294;3633;1;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
 1019554;3633;0;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
 1216820;3633;1;0;Aumente a Família;POWERADE UVA PT 500ML CX06;
@@ -774,7 +774,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1215488;2446;0;0;Aumente a Família;SPRITE LIM PT 2L CX06;
 1004005;2446;0;0;Aumente a Família;SPRITE LIM PT 2L CX06;
 1064229;2446;0;0;Aumente a Família;SPRITE LIM PT 2L CX06;
-1087689;2446;0;1;Aumente a Família;SPRITE LIM PT 2L CX06;
+1087689;2446;1;0;Aumente a Família;SPRITE LIM PT 2L CX06;
 1163654;2446;0;0;Aumente a Família;SPRITE LIM PT 2L CX06;
 1066277;2446;0;0;Aumente a Família;SPRITE LIM PT 2L CX06;
 1217401;2446;0;0;Aumente a Família;SPRITE LIM PT 2L CX06;
@@ -867,7 +867,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1107514;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1045112;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1215323;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
-1106530;3551;0;1;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
+1106530;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1036837;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1122442;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1032247;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
@@ -944,12 +944,12 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1188487;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1211186;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1165774;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
-1134370;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
+1134370;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1145877;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1184083;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1221937;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1170370;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
-1166571;3551;0;1;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
+1166571;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1208416;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1077367;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1169480;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
@@ -968,13 +968,13 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1184792;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1198485;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1051990;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
-1219391;3551;0;1;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
+1219391;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1152257;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1091024;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1076575;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1223498;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1199300;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
-1179159;3551;0;1;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
+1179159;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1223501;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1220992;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1195240;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
@@ -1183,7 +1183,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1092774;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
 1221794;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
 1194169;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
-1217490;3569;0;1;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
+1217490;3569;1;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
 1213288;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
 1194686;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
 1195403;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
@@ -1324,7 +1324,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1044625;1004;0;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1127620;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1223819;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
-1128084;1004;0;0;Traga de volta;COCA-COLA KS 290ML CX24;
+1128084;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1195707;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1206375;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1036030;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
@@ -1344,7 +1344,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1189503;1004;0;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1205235;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1049447;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
-1117707;1004;0;1;Traga de volta;COCA-COLA KS 290ML CX24;
+1117707;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1048279;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1220679;1004;0;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1176507;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
@@ -1570,7 +1570,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1207973;3076;0;0;Traga de volta;COCA-COLA LS 1L CX12;
 1209503;3076;0;0;Traga de volta;COCA-COLA LS 1L CX12;
 1221898;3076;1;0;Traga de volta;COCA-COLA LS 1L CX12;
-1149854;3076;0;0;Traga de volta;COCA-COLA LS 1L CX12;
+1149854;3076;1;0;Traga de volta;COCA-COLA LS 1L CX12;
 1204906;3076;0;0;Traga de volta;COCA-COLA LS 1L CX12;
 1146347;3076;1;0;Traga de volta;COCA-COLA LS 1L CX12;
 1214481;3076;1;0;Traga de volta;COCA-COLA LS 1L CX12;
@@ -1584,7 +1584,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1204831;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1184004;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1181143;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
-1221044;1218;0;1;Traga de volta;COCA-COLA LT 350ML CX12;
+1221044;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1126271;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1095596;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1214543;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
@@ -1599,7 +1599,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1193322;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1218732;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1216407;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
-1204859;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
+1204859;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1213628;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1222490;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1202772;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
@@ -1751,7 +1751,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1204259;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1212396;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1223130;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
-1158559;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
+1158559;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1222477;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1015114;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1221722;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
@@ -1796,10 +1796,10 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1149484;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1207662;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1060845;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
-1129311;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
+1129311;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1224936;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1195460;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
-1181545;1218;0;1;Traga de volta;COCA-COLA LT 350ML CX12;
+1181545;1218;0;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1222746;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1216176;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
 1081273;1218;1;0;Traga de volta;COCA-COLA LT 350ML CX12;
@@ -1905,7 +1905,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1221968;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1213705;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1109758;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
-1206912;2290;0;0;Traga de volta;COCA-COLA PT 200ML CX12;
+1206912;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1203952;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1099838;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1223519;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
@@ -1957,7 +1957,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1214250;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1030794;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1076131;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
-1216485;2290;0;0;Traga de volta;COCA-COLA PT 200ML CX12;
+1216485;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1071270;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1222205;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1221825;2290;0;0;Traga de volta;COCA-COLA PT 200ML CX12;
@@ -1980,7 +1980,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1052350;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1025636;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1106748;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
-1219698;2290;0;0;Traga de volta;COCA-COLA PT 200ML CX12;
+1219698;2290;0;1;Traga de volta;COCA-COLA PT 200ML CX12;
 1184658;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1090327;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
 1157382;2290;1;0;Traga de volta;COCA-COLA PT 200ML CX12;
@@ -2089,7 +2089,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1140897;1194;1;0;Traga de volta;COCA-COLA PT 600ML CX12;
 1152087;1194;1;0;Traga de volta;COCA-COLA PT 600ML CX12;
 1212141;1194;0;0;Traga de volta;COCA-COLA PT 600ML CX12;
-1221893;1194;0;0;Traga de volta;COCA-COLA PT 600ML CX12;
+1221893;1194;1;0;Traga de volta;COCA-COLA PT 600ML CX12;
 1222036;1194;0;0;Traga de volta;COCA-COLA PT 600ML CX12;
 1213962;1194;1;0;Traga de volta;COCA-COLA PT 600ML CX12;
 1089524;1194;0;0;Traga de volta;COCA-COLA PT 600ML CX12;
@@ -2203,7 +2203,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1223110;1194;1;0;Traga de volta;COCA-COLA PT 600ML CX12;
 1020820;1194;1;0;Traga de volta;COCA-COLA PT 600ML CX12;
 1014290;1194;1;0;Traga de volta;COCA-COLA PT 600ML CX12;
-1186423;1194;0;0;Traga de volta;COCA-COLA PT 600ML CX12;
+1186423;1194;1;0;Traga de volta;COCA-COLA PT 600ML CX12;
 1223551;1194;0;0;Traga de volta;COCA-COLA PT 600ML CX12;
 1157071;1194;1;0;Traga de volta;COCA-COLA PT 600ML CX12;
 1164294;1194;1;0;Traga de volta;COCA-COLA PT 600ML CX12;
@@ -2385,7 +2385,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1211995;1738;0;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1165810;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1164773;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
-1164323;1738;0;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
+1164323;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1212058;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1138759;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1216514;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
@@ -2417,7 +2417,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1223849;1738;0;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1152646;1738;0;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1121779;1738;0;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
-1009851;1738;0;1;Traga de volta;COCA-COLA ZER LT 350ML CX12;
+1009851;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1143499;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1220214;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1210473;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
@@ -2462,7 +2462,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1029284;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1184555;1738;0;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1221385;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
-1178306;1738;0;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
+1178306;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1136776;1738;0;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1221984;1738;0;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
 1050605;1738;1;0;Traga de volta;COCA-COLA ZER LT 350ML CX12;
@@ -2484,7 +2484,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1207274;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1216400;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1116720;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
-1196951;2286;0;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
+1196951;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1111298;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1174420;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1193789;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
@@ -2498,7 +2498,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1162460;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1220164;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1214883;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
-1191309;2286;0;1;Traga de volta;COCA-COLA ZER PT 200ML CX12;
+1191309;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1108379;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1063100;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1120698;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
@@ -2524,7 +2524,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1213938;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1201358;2286;0;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1028403;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
-1205653;2286;0;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
+1205653;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1138085;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1190391;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
 1197350;2286;1;0;Traga de volta;COCA-COLA ZER PT 200ML CX12;
@@ -2567,7 +2567,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1220301;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1106464;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1045261;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
-1074792;1511;0;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
+1074792;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1035509;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1107975;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1207746;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
@@ -2662,7 +2662,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1208789;2894;1;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
 1170778;2894;0;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
 1101701;2894;0;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
-1067859;2894;0;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
+1067859;2894;1;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
 1191598;2894;0;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
 1116601;2894;1;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
 1149579;2894;0;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
@@ -2710,7 +2710,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1192052;2894;0;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
 1210825;2894;0;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
 1195214;2894;1;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
-1194167;2894;0;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
+1194167;2894;1;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
 1166720;2894;0;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
 1148141;2894;0;0;Traga de volta;DV NEC MANGA LT 290ML CX06;
 1183095;1634;1;0;Traga de volta;DV NEC MARAC TP 1L CX06;
@@ -2794,7 +2794,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1212963;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
 1195192;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
 1181876;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
-1078239;1633;0;1;Traga de volta;DV NEC UVA TP 1L CX06;
+1078239;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
 1156020;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
 1086148;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
 1018785;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
@@ -2810,7 +2810,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1103849;1293;0;0;Traga de volta;FANTA LAR PT 1,5L CX06;
 1122920;2288;1;0;Traga de volta;FANTA LAR PT 200ML CX12;
 1105352;2288;1;0;Traga de volta;FANTA LAR PT 200ML CX12;
-1162628;1062;0;0;Traga de volta;FANTA LAR PT 2L CX06;
+1162628;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
 1189016;1062;0;0;Traga de volta;FANTA LAR PT 2L CX06;
 1194823;1062;0;0;Traga de volta;FANTA LAR PT 2L CX06;
 1123809;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
@@ -2836,11 +2836,11 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1150461;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
 1058186;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
 1036007;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
-1073981;1062;0;0;Traga de volta;FANTA LAR PT 2L CX06;
+1073981;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
 1146422;1062;0;0;Traga de volta;FANTA LAR PT 2L CX06;
 1201115;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
 1115553;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
-1189978;1062;0;1;Traga de volta;FANTA LAR PT 2L CX06;
+1189978;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
 1143664;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
 1190012;1062;0;0;Traga de volta;FANTA LAR PT 2L CX06;
 1222437;1062;1;0;Traga de volta;FANTA LAR PT 2L CX06;
@@ -2964,7 +2964,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1060627;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
 1121834;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
 1225184;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
-1217684;3594;0;0;Traga de volta;KAPO UVA TP 200ML CX12;
+1217684;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
 1121708;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
 1164574;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
 1191056;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
@@ -3012,7 +3012,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1093502;3641;1;0;Traga de volta;POWERADE TAN PT 500ML CX06;
 1093503;3641;1;0;Traga de volta;POWERADE TAN PT 500ML CX06;
 1197201;3641;1;0;Traga de volta;POWERADE TAN PT 500ML CX06;
-1207598;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
+1207598;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1047800;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1073996;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1197337;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
@@ -3037,7 +3037,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1215689;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1111718;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1092105;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
-1021616;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
+1021616;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1207751;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1200126;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1164873;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
@@ -3124,7 +3124,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1068463;2446;0;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1036198;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1220872;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
-1203629;2446;0;1;Traga de volta;SPRITE LIM PT 2L CX06;
+1203629;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1189000;2446;0;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1215033;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1033206;2446;0;0;Traga de volta;SPRITE LIM PT 2L CX06;
@@ -3174,7 +3174,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1193612;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1136022;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1085082;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
-1202406;2446;0;1;Traga de volta;SPRITE LIM PT 2L CX06;
+1202406;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1210706;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1180640;2446;0;0;Traga de volta;SPRITE LIM PT 2L CX06;
 1214914;2446;1;0;Traga de volta;SPRITE LIM PT 2L CX06;
@@ -3386,11 +3386,11 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1205179;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1121666;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1171650;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
-1036321;3389;0;1;Aumente a Familia;DV FRUT CITRUS PT 1L;
+1036321;3389;1;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1148704;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1121779;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1216571;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
-1203554;2321;0;1;Aumente a Familia;DV FRUT LAR PT 1,5L;
+1203554;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1057881;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1183340;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1155658;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
@@ -3401,7 +3401,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1196579;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1138792;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1145229;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
-1018404;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
+1018404;2321;0;1;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1199531;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1161258;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1094370;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
@@ -3421,7 +3421,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1135978;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1214093;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1027405;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
-1157444;2321;0;1;Aumente a Familia;DV FRUT LAR PT 1,5L;
+1157444;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1181373;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1185588;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1217293;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
@@ -3512,8 +3512,8 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1186838;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1194871;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1185674;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
-1111400;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
-1175520;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
+1111400;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
+1175520;2321;1;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1124134;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1180991;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
 1204350;2321;0;0;Aumente a Familia;DV FRUT LAR PT 1,5L;
@@ -3763,7 +3763,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1183906;1992;0;0;Aumente a Familia;FANTA LAR RP 2L;
 1223704;1992;0;0;Aumente a Familia;FANTA LAR RP 2L;
 1181876;1992;0;0;Aumente a Familia;FANTA LAR RP 2L;
-1223543;1992;0;0;Aumente a Familia;FANTA LAR RP 2L;
+1223543;1992;1;0;Aumente a Familia;FANTA LAR RP 2L;
 1157315;1992;0;0;Aumente a Familia;FANTA LAR RP 2L;
 1144161;1992;0;0;Aumente a Familia;FANTA LAR RP 2L;
 1177053;1992;0;0;Aumente a Familia;FANTA LAR RP 2L;
@@ -3814,7 +3814,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1131634;1992;0;0;Traga de Volta;FANTA LAR RP 2L;
 1188655;1992;0;0;Traga de Volta;FANTA LAR RP 2L;
 1149490;1992;0;0;Traga de Volta;FANTA LAR RP 2L;
-1170214;1992;0;0;Traga de Volta;FANTA LAR RP 2L;
+1170214;1992;1;0;Traga de Volta;FANTA LAR RP 2L;
 1209387;1992;0;0;Traga de Volta;FANTA LAR RP 2L;
 1077546;1992;0;0;Traga de Volta;FANTA LAR RP 2L;
 1198749;1992;0;0;Traga de Volta;FANTA LAR RP 2L;

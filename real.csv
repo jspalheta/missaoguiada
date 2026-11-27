@@ -1,5 +1,5 @@
 codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atualizado_em
-1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;27/11/2026 13:03:34
+1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;27/11/2026 14:03:43
 1144879;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1061967;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1138640;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
@@ -973,7 +973,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1091024;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1076575;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1223498;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
-1199300;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
+1199300;3551;0;1;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1179159;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1223501;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1220992;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
@@ -1425,7 +1425,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1215050;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1052220;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1215397;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
-1205267;1004;0;0;Traga de volta;COCA-COLA KS 290ML CX24;
+1205267;1004;0;1;Traga de volta;COCA-COLA KS 290ML CX24;
 1182889;3076;1;0;Traga de volta;COCA-COLA LS 1L CX12;
 1222474;3076;0;0;Traga de volta;COCA-COLA LS 1L CX12;
 1004400;3076;0;0;Traga de volta;COCA-COLA LS 1L CX12;

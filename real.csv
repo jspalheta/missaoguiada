@@ -1,5 +1,5 @@
 codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atualizado_em
-1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;26/11/2026 17:57:02
+1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;27/11/2026 00:15:56
 1144879;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1061967;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1138640;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
@@ -934,7 +934,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1121800;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1121230;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1019105;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
-1121797;3551;0;1;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
+1121797;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1178516;3551;1;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1202182;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
 1202735;3551;0;0;Aumente a Família;SPRITE LIM ZER MP LT 350ML CX06;
@@ -2737,7 +2737,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1215766;2169;1;0;Traga de volta;DV NEC UVA LT 290ML CX06;
 1185313;2169;1;0;Traga de volta;DV NEC UVA LT 290ML CX06;
 1217681;2169;1;0;Traga de volta;DV NEC UVA LT 290ML CX06;
-1215879;2169;0;1;Traga de volta;DV NEC UVA LT 290ML CX06;
+1215879;2169;0;0;Traga de volta;DV NEC UVA LT 290ML CX06;
 1027919;2169;1;0;Traga de volta;DV NEC UVA LT 290ML CX06;
 1151020;2169;1;0;Traga de volta;DV NEC UVA LT 290ML CX06;
 1202144;2169;1;0;Traga de volta;DV NEC UVA LT 290ML CX06;

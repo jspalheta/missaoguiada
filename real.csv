@@ -1,5 +1,5 @@
 codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atualizado_em
-1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;27/11/2026 16:03:24
+1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;27/11/2026 17:03:36
 1144879;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1061967;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1138640;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
@@ -165,7 +165,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1198571;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1160733;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1017113;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1080200;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1080200;3519;0;1;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1158446;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1060353;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1144587;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
@@ -1000,7 +1000,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1220302;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
 1208879;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
 1211258;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
-1203371;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
+1203371;3569;0;1;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
 1163833;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
 1209256;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
 1123548;3569;0;0;Aumente a Família;SPRITE LIM ZER PT 2L CX06;
@@ -2580,7 +2580,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1150472;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1123322;1511;0;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1179824;1511;0;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
-1032672;1511;0;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
+1032672;1511;0;1;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1193535;1511;1;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1191743;1511;0;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;
 1057371;1511;0;0;Traga de volta;COCA-COLA ZER PT 600ML CX12;

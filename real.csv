@@ -1,5 +1,5 @@
 codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atualizado_em
-1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;27/11/2026 09:18:19
+1181143;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;27/11/2026 11:59:19
 1144879;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1061967;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
 1138640;1555;0;0;Aumente a Família;COCA-COLA ZER KS 290ML CX24;
@@ -354,7 +354,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1160790;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1110479;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1217307;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
-1027209;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
+1027209;3519;0;1;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1218147;3519;1;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1049471;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
 1024282;3519;0;0;Aumente a Família;COCA-COLA ZER LS 1L CX12;
@@ -1391,7 +1391,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1121936;1004;0;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1175668;1004;0;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1198024;1004;0;0;Traga de volta;COCA-COLA KS 290ML CX24;
-1104494;1004;0;0;Traga de volta;COCA-COLA KS 290ML CX24;
+1104494;1004;0;1;Traga de volta;COCA-COLA KS 290ML CX24;
 1085328;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1105142;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
 1154213;1004;1;0;Traga de volta;COCA-COLA KS 290ML CX24;
@@ -2749,7 +2749,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1217019;1633;0;0;Traga de volta;DV NEC UVA TP 1L CX06;
 1018705;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
 1193587;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
-1220481;1633;0;0;Traga de volta;DV NEC UVA TP 1L CX06;
+1220481;1633;0;1;Traga de volta;DV NEC UVA TP 1L CX06;
 1194542;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
 1032446;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
 1112530;1633;1;0;Traga de volta;DV NEC UVA TP 1L CX06;
@@ -2957,9 +2957,9 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1191507;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
 1177526;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
 1223588;3594;0;0;Traga de volta;KAPO UVA TP 200ML CX12;
-1129413;3594;0;0;Traga de volta;KAPO UVA TP 200ML CX12;
+1129413;3594;0;1;Traga de volta;KAPO UVA TP 200ML CX12;
 1097620;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
-1221408;3594;0;0;Traga de volta;KAPO UVA TP 200ML CX12;
+1221408;3594;0;1;Traga de volta;KAPO UVA TP 200ML CX12;
 1121967;3594;0;0;Traga de volta;KAPO UVA TP 200ML CX12;
 1060627;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
 1121834;3594;1;0;Traga de volta;KAPO UVA TP 200ML CX12;
@@ -3017,10 +3017,10 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1073996;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1197337;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1195533;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
-1194439;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
-1137956;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
-1146194;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
-1146195;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
+1194439;3633;0;1;Traga de volta;POWERADE UVA PT 500ML CX06;
+1137956;3633;0;1;Traga de volta;POWERADE UVA PT 500ML CX06;
+1146194;3633;0;1;Traga de volta;POWERADE UVA PT 500ML CX06;
+1146195;3633;0;1;Traga de volta;POWERADE UVA PT 500ML CX06;
 1204350;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1195380;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1059293;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
@@ -3042,7 +3042,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1200126;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1164873;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1222137;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
-1121620;3633;0;0;Traga de volta;POWERADE UVA PT 500ML CX06;
+1121620;3633;0;1;Traga de volta;POWERADE UVA PT 500ML CX06;
 1013703;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1107892;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
 1094950;3633;1;0;Traga de volta;POWERADE UVA PT 500ML CX06;
@@ -3299,7 +3299,7 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1193304;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1193311;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1193305;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
-1193307;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
+1193307;3389;0;1;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1193309;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1187307;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1193313;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
@@ -3463,10 +3463,10 @@ codigo_cliente;cod_produto;realizado_ate_ontem;online;nome_da_missao;produto;atu
 1081504;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1218851;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1162947;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
-1210428;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
+1210428;3389;0;1;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1179076;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
-1119605;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
-1215801;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
+1119605;3389;0;1;Aumente a Familia;DV FRUT CITRUS PT 1L;
+1215801;3389;0;1;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1155735;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1130658;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
 1179605;3389;0;0;Aumente a Familia;DV FRUT CITRUS PT 1L;
